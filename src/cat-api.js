@@ -5,16 +5,15 @@ axios.defaults.headers.common['x-api-key'] =
 
 export function fetchBreeds() {
   const instance = axios.create({
-    baseURL: 'https://api.thecatapi.com/v1/',
+    baseURL: 'https://api.thecatapi.com/v1',
     timeout: 1000,
   });
   return instance
     .get('/breeds')
     .then(response => {
       if (!response.ok) {
-        throw new Error(response.status);
+        return response.data;
       }
-      return response.data;
     })
     .catch(error => {
       console.log(error);
