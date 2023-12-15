@@ -20,3 +20,16 @@ export function fetchBreeds() {
       return error;
     });
 }
+
+export function fetchCatByBreed(breedId) {
+  return axios
+    .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
+    .then(response => {
+      if (!response.ok) {
+        return response.data;
+      }
+    })
+    .catch(error => {
+      return error;
+    });
+}
