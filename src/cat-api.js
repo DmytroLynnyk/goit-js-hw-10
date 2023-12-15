@@ -11,9 +11,10 @@ export function fetchBreeds() {
   return instance
     .get('/breeds')
     .then(response => {
-      if (response.status === 200) {
-        return response.status;
+      if (!response.ok) {
+        throw new Error(response.status);
       }
+      return response.data;
     })
     .catch(error => {
       console.log(error);
