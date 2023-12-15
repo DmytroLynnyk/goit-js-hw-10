@@ -6,7 +6,7 @@ axios.defaults.headers.common['x-api-key'] =
 export function fetchBreeds() {
   const instance = axios.create({
     baseURL: 'https://api.thecatapi.com/v1',
-    timeout: 1000,
+    timeout: 2000,
   });
   return instance
     .get('/breeds')

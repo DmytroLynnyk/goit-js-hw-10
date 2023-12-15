@@ -22,7 +22,7 @@ function renderOptions(response) {
 
 fetchBreeds()
   .then(response => {
-    loader.hedden = true;
+    loader.hidden = true;
     renderOptions(response);
   })
   .catch(() => {
